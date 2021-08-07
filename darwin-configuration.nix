@@ -23,4 +23,7 @@
 
   # Enable the nix-daemon service.
   services.nix-daemon.enable = true;
+
+  fonts.enableFontDir = true;
+  fonts.fonts = [ pkgs.hack-font ];
 }
