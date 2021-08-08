@@ -28,9 +28,6 @@ in
   fonts.enableFontDir = true;
   fonts.fonts = [ pkgs.hack-font ];
 
-  # https://mirrors.tuna.tsinghua.edu.cn/help/nix/
-  nix.binaryCaches = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
-
   # https://github.com/LnL7/nix-darwin/issues/139
   system.activationScripts.applications.text = pkgs.lib.mkForce (
     ''
