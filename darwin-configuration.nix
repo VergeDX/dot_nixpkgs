@@ -88,4 +88,7 @@ in
   # https://nixos.wiki/wiki/Flakes
   nix.package = pkgs.nixFlakes;
   nix.extraOptions = "experimental-features = nix-command flakes";
+
+  # Package ‘vscode’ has an unfree license (‘unfree’), refusing to evaluate.
+  nixpkgs.config.allowUnfree = true;
 }
