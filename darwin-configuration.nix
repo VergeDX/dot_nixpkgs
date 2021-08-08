@@ -49,6 +49,8 @@ in
     ''
   );
 
+  # https://github.com/NixOS/nix/issues/1669
+  # https://stackoverflow.com/a/26477515/166289
   environment.launchDaemons."3_proxy_variables" = {
     enable = true;
     target = "3_proxy_variables.plist";
