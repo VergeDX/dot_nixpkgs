@@ -15,7 +15,9 @@ in
 
   # Auto upgrade nix package and the daemon service.
   # services.nix-daemon.enable = true;
-  # nix.package = pkgs.nix;
+  # https://nixos.wiki/wiki/Flakes
+  nix.package = pkgs.nixFlakes;
+  nix.extraOptions = "experimental-features = nix-command flakes";
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   # programs.zsh.enable = true; # default shell on catalina
@@ -34,10 +36,6 @@ in
     pkgs.powerline-fonts
     pkgs.powerline-symbols
   ];
-
-  # https://nixos.wiki/wiki/Flakes
-  nix.package = pkgs.nixFlakes;
-  nix.extraOptions = "experimental-features = nix-command flakes";
 
   # Package ‘vscode’ has an unfree license (‘unfree’), refusing to evaluate.
   nixpkgs.config.allowUnfree = true;
