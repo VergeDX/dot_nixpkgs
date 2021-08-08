@@ -26,4 +26,7 @@
 
   fonts.enableFontDir = true;
   fonts.fonts = [ pkgs.hack-font ];
+
+  # https://mirrors.tuna.tsinghua.edu.cn/help/nix/
+  nix.binaryCaches = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
 }
