@@ -69,8 +69,7 @@ in
             <string>launchctl setenv http_proxy http://127.0.0.1:7890</string>
             <string>launchctl setenv all_proxy socks5://127.0.0.1:7890</string>
             <!-- Reload nix-daemon after set proxy environment variable. -->
-            <string>launchctl unload /Library/LaunchDaemons/org.nixos.nix-daemon.plist</string>
-            <string>launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist</string>
+            <string>launchctl kickstart -k /Library/LaunchDaemons/org.nixos.nix-daemon.plist</string>
           </array>
           <key>KeepAlive</key>
           <false/>
