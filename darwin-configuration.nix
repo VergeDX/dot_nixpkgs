@@ -35,7 +35,7 @@ in
     pkgs.nerdfonts
     pkgs.powerline-fonts
     pkgs.powerline-symbols
-  ];
+  ] ++ (import ./fetched_fonts.nix { pkgs = pkgs; });
 
   # Package ‘vscode’ has an unfree license (‘unfree’), refusing to evaluate.
   nixpkgs.config.allowUnfree = true;
