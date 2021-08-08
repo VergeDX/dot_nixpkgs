@@ -29,7 +29,11 @@ in
   services.nix-daemon.enable = true;
 
   fonts.enableFontDir = true;
-  fonts.fonts = [ pkgs.hack-font ];
+  fonts.fonts = [
+    pkgs.nerdfonts
+    pkgs.powerline-fonts
+    pkgs.powerline-symbols
+  ];
 
   # https://github.com/LnL7/nix-darwin/issues/139
   system.activationScripts.applications.text = pkgs.lib.mkForce (
