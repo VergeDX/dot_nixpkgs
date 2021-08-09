@@ -5,8 +5,9 @@ in
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
-    pkgs.vscode
     pkgs.alacritty
+    pkgs.vscode
+    pkgs.kitty
   ];
 
   # Use a custom configuration.nix location.
