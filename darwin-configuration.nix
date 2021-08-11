@@ -8,7 +8,7 @@ in
     pkgs.alacritty
     pkgs.vscode
     pkgs.kitty
-  ];
+  ] ++ import ./fetched_apps.nix;
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
