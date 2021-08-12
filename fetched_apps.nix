@@ -18,6 +18,10 @@ let
       src = pkgs.fetchurl {
         url = builtins.replaceStrings [ "{}" ] [ version ] holderLink;
         sha256 = sha256;
+
+        # https://discourse.nixos.org/t/how-to-change-the-user-agent-used-by-fetchurl/4987/2
+        # https://github.com/Homebrew/homebrew-cask/blob/master/Casks/neteasemusic.rb
+        curlOpts = "-A :fake";
       };
 
       nativeBuildInputs = [ pkgs.xar pkgs.cpio pkgs.unzip ];
@@ -32,9 +36,10 @@ let
         '' else if fileType == "zip" then "unzip ${src}"
         else abort "No implement compress format: ${fileType}";
 
+      configurePhase = "echo";
       installPhase = ''
         mkdir -p $out/Applications/
-        find . | grep ".app$" | head -n 1 | xargs -I {} cp -r {} $out/Applications/
+        ls | grep ".app$" | head -n 1 | xargs -I {} cp -r {} $out/Applications/
       '';
     };
 
@@ -54,6 +59,10 @@ in
   (buildDarwinApps "webstorm" "2021.2" "WebStorm"
     "https://download.jetbrains.com/webstorm/WebStorm-{}.dmg"
     "sha256-edAnWOl971vHt2IdCbLTRwRj6ktk1pFNj5nXhAjM4qY=")
+] ++ [
+  (buildDarwinApps "neteasemusic" "2.3.5_856" "网易云音乐"
+    "https://d1.music.126.net/dmusic/NeteaseMusic_{}_web.dmg"
+    "sha256-zkcGKvm5rL9AexzYuxo/eYsodys46yuR3dByYLvhNqw=")
 ] ++ [
   # (buildDarwinApps "atom" "1.58.0" "Atom"
   #   "https://github.com/atom/atom/releases/download/v1.58.0/atom-mac.zip"
