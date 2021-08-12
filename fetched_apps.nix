@@ -6,17 +6,17 @@ let
     let strLen = pkgs.lib.stringLength str;
     in pkgs.lib.substring (strLen - last) strLen str;
 
-  buildDarwinApps = name: version: location: link: sha256:
+  buildDarwinApps = name: version: location: holderLink: sha256:
     let supportFmt = [ "dmg" "pkg" "zip" ]; in
     pkgs.stdenv.mkDerivation rec {
       inherit name version;
 
-      fileType = let extName = stringTakeLast link 3; in
+      fileType = let extName = stringTakeLast holderLink 3; in
         if builtins.elem extName supportFmt then extName
         else abort "Unsupported compression file types: ${extName}";
 
       src = pkgs.fetchurl {
-        url = link;
+        url = builtins.replaceStrings [ "{}" ] [ version ] holderLink;
         sha256 = sha256;
       };
 
