@@ -16,7 +16,7 @@ let
         else abort "Unsupported compression file types: ${extName}";
 
       src = pkgs.fetchurl {
-        url = builtins.replaceStrings [ "{}" ] [ version ] holderLink;
+        url = builtins.replaceStrings [ "{0}" "{1}" "{2}" ] [ name version location ] holderLink;
         sha256 = sha256;
 
         # https://discourse.nixos.org/t/how-to-change-the-user-agent-used-by-fetchurl/4987/2
@@ -48,23 +48,23 @@ let
 in
 [
   (buildDarwinApps "jetbrains.appcode" "2021.1.3" "AppCode"
-    "${jbBaseUrl}/objc/AppCode-{}.dmg"
+    "${jbBaseUrl}/objc/AppCode-{1}.dmg"
     "sha256-t8LlJWEosUkRsEcvdNcnDZ4bx/9Wl9KM34Mz7Hx4ENY=")
   (buildDarwinApps "jetbrains.clion" "2021.2" "CLion"
-    "${jbBaseUrl}/cpp/CLion-{}.dmg"
+    "${jbBaseUrl}/cpp/CLion-{1}.dmg"
     "sha256-umX/qNXJpC9w0wb2d/7BU+H2UQ107exuJkg/aUYKRX0=")
   (buildDarwinApps "idea-ultimate" "2021.2" "IntelliJ IDEA"
-    "https://download.jetbrains.com/idea/ideaIU-{}.dmg"
+    "https://download.jetbrains.com/idea/ideaIU-{1}.dmg"
     "sha256-wj7p9oq71QPlAZx0XMW/KjCPgejCu9IQzPr7wRJMHlk=")
   (buildDarwinApps "webstorm" "2021.2" "WebStorm"
-    "https://download.jetbrains.com/webstorm/WebStorm-{}.dmg"
+    "https://download.jetbrains.com/webstorm/WebStorm-{1}.dmg"
     "sha256-edAnWOl971vHt2IdCbLTRwRj6ktk1pFNj5nXhAjM4qY=")
 ] ++ [
   (buildDarwinApps "neteasemusic" "2.3.5_856" "网易云音乐"
-    "https://d1.music.126.net/dmusic/NeteaseMusic_{}_web.dmg"
+    "https://d1.music.126.net/dmusic/NeteaseMusic_{1}_web.dmg"
     "sha256-zkcGKvm5rL9AexzYuxo/eYsodys46yuR3dByYLvhNqw=")
   (buildDarwinApps "yubikey-manager-qt" "1.2.3" "com.yubico.ykman.pkg"
-    "https://developers.yubico.com/yubikey-manager-qt/Releases/yubikey-manager-qt-{}-mac.pkg"
+    "https://developers.yubico.com/yubikey-manager-qt/Releases/yubikey-manager-qt-{1}-mac.pkg"
     "sha256-Y3FF0UyY7kJ7d7syx9BcaATRd1oD6EuYKql3WoRztSc=")
 ] ++ [
   # (buildDarwinApps "atom" "1.58.0" "Atom"
