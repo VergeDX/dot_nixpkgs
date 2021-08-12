@@ -49,9 +49,9 @@ let
   jbBaseUrl = "https://download.jetbrains.com";
 in
 [
-  (buildDarwinApps "tdesktop" "2.9.3" "Telegram Desktop"
-    "https://updates.{0}.com/tmac/tsetup.{1}.dmg"
-    "sha256-/jlJEVMl/LI9Hjq2b8m+raK0+occ6XlvK7xKmfFjYds=")
+  # (buildDarwinApps "tdesktop" "2.9.3" "Telegram Desktop"
+  #   "https://updates.{0}.com/tmac/tsetup.{1}.dmg"
+  #   "sha256-/jlJEVMl/LI9Hjq2b8m+raK0+occ6XlvK7xKmfFjYds=")
   (buildDarwinApps "zoom-us" "5.7.4.898" "zoomus.pkg"
     "https://zoom.us/client/5.7.4.898/Zoom.pkg"
     "sha256-RLk3uw2bhQIov94qvncpaZFSjW3aSdf/ZRKlIirQIuY=")
