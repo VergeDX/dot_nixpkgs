@@ -63,6 +63,9 @@ in
   (buildDarwinApps "neteasemusic" "2.3.5_856" "网易云音乐"
     "https://d1.music.126.net/dmusic/NeteaseMusic_{}_web.dmg"
     "sha256-zkcGKvm5rL9AexzYuxo/eYsodys46yuR3dByYLvhNqw=")
+  (buildDarwinApps "yubikey-manager-qt" "1.2.3" "com.yubico.ykman.pkg"
+    "https://developers.yubico.com/yubikey-manager-qt/Releases/yubikey-manager-qt-{}-mac.pkg"
+    "sha256-Y3FF0UyY7kJ7d7syx9BcaATRd1oD6EuYKql3WoRztSc=")
 ] ++ [
   # (buildDarwinApps "atom" "1.58.0" "Atom"
   #   "https://github.com/atom/atom/releases/download/v1.58.0/atom-mac.zip"
