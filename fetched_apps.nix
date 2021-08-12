@@ -37,8 +37,24 @@ let
         find . | grep ".app$" | head -n 1 | xargs -I {} cp -r {} $out/Applications/
       '';
     };
+
+  # https://github.com/NixOS/nixpkgs/blob/nixpkgs-unstable/pkgs/applications/editors/jetbrains/default.nix
+  jbBaseUrl = "https://download.jetbrains.com";
 in
 [
+  (buildDarwinApps "jetbrains.appcode" "2021.1.3" "AppCode"
+    "${jbBaseUrl}/objc/AppCode-{}.dmg"
+    "sha256-t8LlJWEosUkRsEcvdNcnDZ4bx/9Wl9KM34Mz7Hx4ENY=")
+  (buildDarwinApps "jetbrains.clion" "2021.2" "CLion"
+    "${jbBaseUrl}/cpp/CLion-{}.dmg"
+    "sha256-umX/qNXJpC9w0wb2d/7BU+H2UQ107exuJkg/aUYKRX0=")
+  (buildDarwinApps "idea-ultimate" "2021.2" "IntelliJ IDEA"
+    "https://download.jetbrains.com/idea/ideaIU-{}.dmg"
+    "sha256-wj7p9oq71QPlAZx0XMW/KjCPgejCu9IQzPr7wRJMHlk=")
+  (buildDarwinApps "webstorm" "2021.2" "WebStorm"
+    "https://download.jetbrains.com/webstorm/WebStorm-{}.dmg"
+    "sha256-edAnWOl971vHt2IdCbLTRwRj6ktk1pFNj5nXhAjM4qY=")
+] ++ [
   # (buildDarwinApps "atom" "1.58.0" "Atom"
   #   "https://github.com/atom/atom/releases/download/v1.58.0/atom-mac.zip"
   #   "sha256-KNjPSH5oJx3ofgQn2LVmYJ4p1Avp/wp2wJ7HKIOo6DY=")
@@ -46,8 +62,4 @@ in
   # (buildDarwinApps "zoom-us" "5.7.4.898" "zoomus.pkg"
   # "https://zoom.us/client/5.7.4.898/Zoom.pkg"
   # "sha256-RLk3uw2bhQIov94qvncpaZFSjW3aSdf/ZRKlIirQIuY=")
-
-  # (buildDarwinApps "idea-ultimate" "2021.2" "IntelliJ IDEA"
-  #   "https://download.jetbrains.com/idea/ideaIU-2021.2.dmg"
-  #   "sha256-wj7p9oq71QPlAZx0XMW/KjCPgejCu9IQzPr7wRJMHlk=")
 ]
