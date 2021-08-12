@@ -28,7 +28,7 @@ let
       # https://stackoverflow.com/questions/11298855/how-to-unpack-and-pack-pkg-file
       unpackPhase =
         if fileType == "dmg" then ''
-          /usr/bin/hdiutil attach ${src}
+          echo y | /usr/bin/hdiutil attach ${src}
           cd "/Volumes/${location}"
         '' else if fileType == "pkg" then ''
           xar -xf ${src} && cd ${location}
@@ -43,10 +43,35 @@ let
       '';
     };
 
+  txBaseUrl = "https://dldir1.qq.com";
+  buildGhUrl = repo: dl: "https://github.com" + repo + "releases/download/" + dl;
   # https://github.com/NixOS/nixpkgs/blob/nixpkgs-unstable/pkgs/applications/editors/jetbrains/default.nix
   jbBaseUrl = "https://download.jetbrains.com";
 in
 [
+  (buildDarwinApps "tdesktop" "2.9.3" "Telegram Desktop"
+    "https://updates.{0}.com/tmac/tsetup.{1}.dmg"
+    "sha256-/jlJEVMl/LI9Hjq2b8m+raK0+occ6XlvK7xKmfFjYds=")
+  (buildDarwinApps "zoom-us" "5.7.4.898" "zoomus.pkg"
+    "https://zoom.us/client/5.7.4.898/Zoom.pkg"
+    "sha256-RLk3uw2bhQIov94qvncpaZFSjW3aSdf/ZRKlIirQIuY=")
+  (buildDarwinApps "qq-beta" "8.4.10.118" "QQ"
+    "${txBaseUrl}/qqfile/{2}forMac/{2}Catalyst/{2}_{1}.dmg"
+    "sha256-3tdEZD241ZEsuW2JIyeGpV62wI1+AZjHSVxyeNKBfRY=")
+  # https://github.com/Homebrew/homebrew-cask/blob/HEAD/Casks/wechat.rb
+  (buildDarwinApps "weixin" "3.1.5" "微信 WeChat"
+    "${txBaseUrl}/{0}/mac/WeChatMac.dmg"
+    "sha256-vpJga4P7sboUiAqWFfabQXjxHPxkF76TR6Wj+U4x40I=")
+  (buildDarwinApps "discord" "0.0.263" "Discord"
+    "https://dl.{0}app.net/apps/osx/{1}/{2}.dmg"
+    "sha256-JuWOJiv8zo8C6roIdaAVW7hXsbCYwJV6eyfAQAfzLPU=")
+  # (buildDarwinApps "discord" "0.0.263" "Discord"
+  #   "https://dl.{0}app.net/apps/osx/{1}/{2}.dmg"
+  #   "sha256-JuWOJiv8zo8C6roIdaAVW7hXsbCYwJV6eyfAQAfzLPU=")
+  (buildDarwinApps "betterdiscord-installer" "1.0.0-hotfix" "BetterDiscord"
+    (buildGhUrl "/BetterDiscord/Installer/" "v{1}/{2}-Mac.zip")
+    "sha256-2cSZ+BApJQTQY42wTKb38MEU8Jc51HmgIBx3WiIgXHs=")
+] ++ [
   (buildDarwinApps "jetbrains.appcode" "2021.1.3" "AppCode"
     "${jbBaseUrl}/objc/{2}-{1}.dmg"
     "sha256-t8LlJWEosUkRsEcvdNcnDZ4bx/9Wl9KM34Mz7Hx4ENY=")
@@ -70,8 +95,4 @@ in
   # (buildDarwinApps "atom" "1.58.0" "Atom"
   #   "https://github.com/atom/atom/releases/download/v1.58.0/atom-mac.zip"
   #   "sha256-KNjPSH5oJx3ofgQn2LVmYJ4p1Avp/wp2wJ7HKIOo6DY=")
-
-  # (buildDarwinApps "zoom-us" "5.7.4.898" "zoomus.pkg"
-  # "https://zoom.us/client/5.7.4.898/Zoom.pkg"
-  # "sha256-RLk3uw2bhQIov94qvncpaZFSjW3aSdf/ZRKlIirQIuY=")
 ]
