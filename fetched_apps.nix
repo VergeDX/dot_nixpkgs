@@ -48,23 +48,23 @@ let
 in
 [
   (buildDarwinApps "jetbrains.appcode" "2021.1.3" "AppCode"
-    "${jbBaseUrl}/objc/AppCode-{1}.dmg"
+    "${jbBaseUrl}/objc/{2}-{1}.dmg"
     "sha256-t8LlJWEosUkRsEcvdNcnDZ4bx/9Wl9KM34Mz7Hx4ENY=")
   (buildDarwinApps "jetbrains.clion" "2021.2" "CLion"
-    "${jbBaseUrl}/cpp/CLion-{1}.dmg"
+    "${jbBaseUrl}/cpp/{2}-{1}.dmg"
     "sha256-umX/qNXJpC9w0wb2d/7BU+H2UQ107exuJkg/aUYKRX0=")
   (buildDarwinApps "idea-ultimate" "2021.2" "IntelliJ IDEA"
     "https://download.jetbrains.com/idea/ideaIU-{1}.dmg"
     "sha256-wj7p9oq71QPlAZx0XMW/KjCPgejCu9IQzPr7wRJMHlk=")
   (buildDarwinApps "webstorm" "2021.2" "WebStorm"
-    "https://download.jetbrains.com/webstorm/WebStorm-{1}.dmg"
+    "https://download.jetbrains.com/{0}/{2}-{1}.dmg"
     "sha256-edAnWOl971vHt2IdCbLTRwRj6ktk1pFNj5nXhAjM4qY=")
 ] ++ [
   (buildDarwinApps "neteasemusic" "2.3.5_856" "网易云音乐"
     "https://d1.music.126.net/dmusic/NeteaseMusic_{1}_web.dmg"
     "sha256-zkcGKvm5rL9AexzYuxo/eYsodys46yuR3dByYLvhNqw=")
   (buildDarwinApps "yubikey-manager-qt" "1.2.3" "com.yubico.ykman.pkg"
-    "https://developers.yubico.com/yubikey-manager-qt/Releases/yubikey-manager-qt-{1}-mac.pkg"
+    "https://developers.yubico.com/{0}/Releases/{0}-{1}-mac.pkg"
     "sha256-Y3FF0UyY7kJ7d7syx9BcaATRd1oD6EuYKql3WoRztSc=")
 ] ++ [
   # (buildDarwinApps "atom" "1.58.0" "Atom"
