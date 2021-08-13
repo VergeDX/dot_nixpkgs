@@ -7,7 +7,7 @@ in
   environment.systemPackages = [
     pkgs.alacritty
     pkgs.vscode
-    pkgs.kitty
+    pkgs.iterm2
   ] ++ import ./fetched_apps.nix;
 
   # Use a custom configuration.nix location.
