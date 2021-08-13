@@ -91,6 +91,9 @@ in
   (buildDarwinApps "yubikey-manager-qt" "1.2.3" "com.yubico.ykman.pkg"
     "https://developers.yubico.com/{0}/Releases/{0}-{1}-mac.pkg"
     "sha256-Y3FF0UyY7kJ7d7syx9BcaATRd1oD6EuYKql3WoRztSc=")
+  (buildDarwinApps "baidunetdisk" "3.9.0" "百度网盘"
+    "https://issuecdn.baidupcs.com/issue/netdisk/MACguanjia/BaiduNetdisk_mac_{1}.dmg"
+    "sha256-4jq7n/gYMCmtrag4ThGUbaUhpOPPukEAUrRFbYKUxnA=")
 ] ++ [
   # (buildDarwinApps "atom" "1.58.0" "Atom"
   #   "https://github.com/atom/atom/releases/download/v1.58.0/atom-mac.zip"
