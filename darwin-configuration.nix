@@ -5,6 +5,7 @@ in
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
+    (import ./clashX.nix)
     pkgs.alacritty
     pkgs.vscode
     pkgs.iterm2
