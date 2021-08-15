@@ -62,9 +62,6 @@ in
   (buildDarwinApps "weixin" "3.1.5" "微信 WeChat"
     "${txBaseUrl}/{0}/mac/WeChatMac.dmg"
     "sha256-vpJga4P7sboUiAqWFfabQXjxHPxkF76TR6Wj+U4x40I=")
-  (buildDarwinApps "discord" "0.0.263" "Discord"
-    "https://dl.{0}app.net/apps/osx/{1}/{2}.dmg"
-    "sha256-JuWOJiv8zo8C6roIdaAVW7hXsbCYwJV6eyfAQAfzLPU=")
   # (buildDarwinApps "discord" "0.0.263" "Discord"
   #   "https://dl.{0}app.net/apps/osx/{1}/{2}.dmg"
   #   "sha256-JuWOJiv8zo8C6roIdaAVW7hXsbCYwJV6eyfAQAfzLPU=")
