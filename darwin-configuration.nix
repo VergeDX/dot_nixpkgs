@@ -6,7 +6,6 @@ in
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
     (import ./clashX.nix)
-    pkgs.alacritty
     pkgs.vscode
     pkgs.iterm2
   ] ++ import ./fetched_apps.nix;
