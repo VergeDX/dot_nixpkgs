@@ -79,12 +79,21 @@ in
     "https://github.com/agalwood/{2}/releases/download/v{1}/{2}-{1}-mac.zip"
     "sha256-7fBYB/rkZMiRRmuJVOsuDnTEOB4iQFe2gIdq8vwMXNE=")
 ] ++ [
-  # Folder: Auto Start
+  # Folder: Auto Start & Extensions
   (buildDarwinApps "scroll-reverser" "1.8.1" "ScrollReverser"
     "https://pilotmoon.com/downloads/ScrollReverser-{1}.zip"
     "sha256-9lGjjW/lhTStfY3dWqqm4XecgY/zAILZv/7zef7mKis=")
   (buildDarwinApps "one-switch" "317" "OneSwitch"
     "https://fireball.studio/api/release_manager/downloads/studio.fireball.{2}/{1}.zip"
     "sha256-9ubqannc8NpsBSoYr95J/Boh3qcGL+xIew9EHL5NgnE=")
+  (buildDarwinApps "openinterminal" "2.3.3" "OpenInTerminal"
+    "https://github.com/Ji4n1ng/{2}/releases/download/v{1}/{2}.app.zip"
+    "sha256-VN++jSG0y0aIXtXrw0/t+Dgqz+tQBAgo1SsKC4p8iFs=")
+  (buildDarwinApps "openinterminal-lite" "1.2.3" "OpenInTerminal-Lite"
+    "https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v{1}/{2}.app.zip"
+    "sha256-ZyOfcgH+10V9KDrdOk8jMgA4/3V0c6HyI4+Yb9QTuFM=")
+  (buildDarwinApps "openineditor-lite" "1.2.3" "OpenInEditor-Lite"
+    "https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v{1}/{2}.app.zip"
+    "sha256-aPnJPBgySIXAOgPVccoRCiSi/Q/ZDZIxZdgvTbfgaZ0=")
 ]
 
