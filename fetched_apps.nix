@@ -24,7 +24,7 @@ let
         curlOpts = "-A :fake";
       };
 
-      nativeBuildInputs = [ pkgs.xar pkgs.cpio pkgs.unzip ];
+      nativeBuildInputs = [ pkgs.xar pkgs.cpio pkgs.p7zip ];
       # https://stackoverflow.com/questions/11298855/how-to-unpack-and-pack-pkg-file
       unpackPhase =
         if fileType == "dmg" then ''
@@ -33,7 +33,7 @@ let
         '' else if fileType == "pkg" then ''
           xar -xf ${src} && cd ${location}
           cat Payload | gunzip -dc | cpio -i
-        '' else if fileType == "zip" then "unzip ${src}"
+        '' else if fileType == "zip" then "7z x ${src}"
         else abort "No implement compress format: ${fileType}";
 
       configurePhase = "echo";
@@ -75,13 +75,16 @@ in
   (buildDarwinApps "yubikey-manager-qt" "1.2.3" "com.yubico.ykman.pkg"
     "https://developers.yubico.com/{0}/Releases/{0}-{1}-mac.pkg"
     "sha256-Y3FF0UyY7kJ7d7syx9BcaATRd1oD6EuYKql3WoRztSc=")
+  (buildDarwinApps "motrix" "1.6.11" "Motrix"
+    "https://github.com/agalwood/{2}/releases/download/v{1}/{2}-{1}-mac.zip"
+    "sha256-7fBYB/rkZMiRRmuJVOsuDnTEOB4iQFe2gIdq8vwMXNE=")
 ] ++ [
   # Folder: Auto Start
-  (buildDarwinApps "hyperswitch" "0.2.592-dev" "HyperSwitch"
-    "https://bahoom.com/hyperswitch/{1}/HyperSwitch.zip"
-    "sha256-fkok4WDl/3diTvvek/t6503O1G9L/uyGnGGEQ3ykzxo=")
   (buildDarwinApps "scroll-reverser" "1.8.1" "ScrollReverser"
     "https://pilotmoon.com/downloads/ScrollReverser-{1}.zip"
     "sha256-9lGjjW/lhTStfY3dWqqm4XecgY/zAILZv/7zef7mKis=")
+  (buildDarwinApps "one-switch" "317" "OneSwitch"
+    "https://fireball.studio/api/release_manager/downloads/studio.fireball.{2}/{1}.zip"
+    "sha256-9ubqannc8NpsBSoYr95J/Boh3qcGL+xIew9EHL5NgnE=")
 ]
 
