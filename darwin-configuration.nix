@@ -7,7 +7,6 @@ in
   environment.systemPackages = [
     (import ./clashX.nix)
     pkgs.vscode
-    pkgs.iterm2
   ] ++ import ./fetched_apps.nix;
 
   # Use a custom configuration.nix location.
