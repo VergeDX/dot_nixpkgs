@@ -65,13 +65,16 @@ in
     "${jbBaseUrl}/cpp/{2}-{1}.dmg"
     "sha256-umX/qNXJpC9w0wb2d/7BU+H2UQ107exuJkg/aUYKRX0=")
   (buildDarwinApps "idea-ultimate" "2021.2" "IntelliJ IDEA"
-    "https://download.jetbrains.com/idea/ideaIU-{1}.dmg"
+    "${jbBaseUrl}/idea/ideaIU-{1}.dmg"
     "sha256-wj7p9oq71QPlAZx0XMW/KjCPgejCu9IQzPr7wRJMHlk=")
   (buildDarwinApps "rider" "2021.2" "Rider"
-    "https://download.jetbrains.com/{0}/JetBrains.{2}-{1}.dmg"
+    "${jbBaseUrl}/{0}/JetBrains.{2}-{1}.dmg"
     "sha256-MHpW++B0j2Ussf8DxMxjbZZWd4aBwrZ7AggMrSd9etw=")
+  (buildDarwinApps "visual-studio" "8.10.7.17" "Visual Studio"
+    "https://dl.xamarin.com/VsMac/VisualStudioForMac-{1}.dmg"
+    "sha256-m5K6feDxQexnE3mLZFrkcFoOEqCyYN79C0oU99TEHBU=")
   (buildDarwinApps "webstorm" "2021.2" "WebStorm"
-    "https://download.jetbrains.com/{0}/{2}-{1}.dmg"
+    "${jbBaseUrl}/{0}/{2}-{1}.dmg"
     "sha256-edAnWOl971vHt2IdCbLTRwRj6ktk1pFNj5nXhAjM4qY=")
 ] ++ [
   # Folder: None
