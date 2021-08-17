@@ -58,15 +58,18 @@ in
     "sha256-3tdEZD241ZEsuW2JIyeGpV62wI1+AZjHSVxyeNKBfRY=")
 ] ++ [
   # Folder: IDE
-  (buildDarwinApps "jetbrains.appcode" "2021.1.3" "AppCode"
+  (buildDarwinApps "appcode" "2021.1.3" "AppCode"
     "${jbBaseUrl}/objc/{2}-{1}.dmg"
     "sha256-t8LlJWEosUkRsEcvdNcnDZ4bx/9Wl9KM34Mz7Hx4ENY=")
-  (buildDarwinApps "jetbrains.clion" "2021.2" "CLion"
+  (buildDarwinApps "clion" "2021.2" "CLion"
     "${jbBaseUrl}/cpp/{2}-{1}.dmg"
     "sha256-umX/qNXJpC9w0wb2d/7BU+H2UQ107exuJkg/aUYKRX0=")
   (buildDarwinApps "idea-ultimate" "2021.2" "IntelliJ IDEA"
     "https://download.jetbrains.com/idea/ideaIU-{1}.dmg"
     "sha256-wj7p9oq71QPlAZx0XMW/KjCPgejCu9IQzPr7wRJMHlk=")
+  (buildDarwinApps "rider" "2021.2" "Rider"
+    "https://download.jetbrains.com/{0}/JetBrains.{2}-{1}.dmg"
+    "sha256-MHpW++B0j2Ussf8DxMxjbZZWd4aBwrZ7AggMrSd9etw=")
   (buildDarwinApps "webstorm" "2021.2" "WebStorm"
     "https://download.jetbrains.com/{0}/{2}-{1}.dmg"
     "sha256-edAnWOl971vHt2IdCbLTRwRj6ktk1pFNj5nXhAjM4qY=")
