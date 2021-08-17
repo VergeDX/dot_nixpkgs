@@ -2,12 +2,12 @@ let
   pkgs = import <nixpkgs> { };
   menubar_runcat = pkgs.stdenv.mkDerivation rec {
     name = "menubar_runcat";
-    version = "86a5406";
+    version = "3ce266a";
 
     src = pkgs.fetchgit {
       url = "https://github.com/VergeDX/menubar_runcat.git";
-      rev = "${version}63943dd6df347063b4b36510c4303d294";
-      sha256 = "sha256-PKe58qUJts66HrTAbQD8hj6Tv73Fu1asfLmGELizxz4=";
+      rev = "${version}7aa1aafdec43a65e4ce45eafc12df7406";
+      sha256 = "sha256-Lnl9g12aoHrSY6/FoYf73HvWyh2OyOi0zhBs3S407zo=";
     };
 
     # https://github.com/NixOS/nixpkgs/blob/nixpkgs-unstable/pkgs/applications/terminal-emulators/iterm2/default.nix
