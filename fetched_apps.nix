@@ -102,5 +102,10 @@ in
   (buildDarwinApps "snipaste" "2.6.6-Beta2" "Snipaste"
     "https://bitbucket.org/liule/{0}/downloads/{2}-{1}.dmg"
     "sha256-hYKwRbNAzDKNn6uao3aZ9rtzEqOMeyhHZoR4/G/q2RM=")
+] ++ [
+  # Folder: None (Outside)
+  (buildDarwinApps "neteasemusic" "2.3.5_856" "网易云音乐"
+    "https://d1.music.126.net/dmusic/NeteaseMusic_{1}_web.dmg"
+    "sha256-zkcGKvm5rL9AexzYuxo/eYsodys46yuR3dByYLvhNqw=")
 ]
 
