@@ -96,5 +96,8 @@ in
     "https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v{1}/{2}.app.zip"
     "sha256-aPnJPBgySIXAOgPVccoRCiSi/Q/ZDZIxZdgvTbfgaZ0=")
   (import ./menubar_runcat.nix)
+  (buildDarwinApps "snipaste" "2.6.6-Beta2" "Snipaste"
+    "https://bitbucket.org/liule/{0}/downloads/{2}-{1}.dmg"
+    "sha256-hYKwRbNAzDKNn6uao3aZ9rtzEqOMeyhHZoR4/G/q2RM=")
 ]
 
