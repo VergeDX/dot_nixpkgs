@@ -95,5 +95,6 @@ in
   (buildDarwinApps "openineditor-lite" "1.2.3" "OpenInEditor-Lite"
     "https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v{1}/{2}.app.zip"
     "sha256-aPnJPBgySIXAOgPVccoRCiSi/Q/ZDZIxZdgvTbfgaZ0=")
+  (import ./menubar_runcat.nix)
 ]
 
