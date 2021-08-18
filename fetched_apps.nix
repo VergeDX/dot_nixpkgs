@@ -95,12 +95,6 @@ in
   (buildDarwinApps "openinterminal" "2.3.3" "OpenInTerminal"
     "https://github.com/Ji4n1ng/{2}/releases/download/v{1}/{2}.app.zip"
     "sha256-VN++jSG0y0aIXtXrw0/t+Dgqz+tQBAgo1SsKC4p8iFs=")
-  (buildDarwinApps "openinterminal-lite" "1.2.3" "OpenInTerminal-Lite"
-    "https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v{1}/{2}.app.zip"
-    "sha256-ZyOfcgH+10V9KDrdOk8jMgA4/3V0c6HyI4+Yb9QTuFM=")
-  (buildDarwinApps "openineditor-lite" "1.2.3" "OpenInEditor-Lite"
-    "https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v{1}/{2}.app.zip"
-    "sha256-aPnJPBgySIXAOgPVccoRCiSi/Q/ZDZIxZdgvTbfgaZ0=")
   (import ./menubar_runcat.nix)
   (buildDarwinApps "snipaste" "2.6.6-Beta2" "Snipaste"
     "https://bitbucket.org/liule/{0}/downloads/{2}-{1}.dmg"
