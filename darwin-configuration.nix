@@ -6,7 +6,7 @@ in
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
     (import ./clashX.nix)
-    pkgs.vscode
+    pkgs.vscode # pkgs.vscodium
   ] ++ import ./fetched_apps.nix;
 
   # Use a custom configuration.nix location.
