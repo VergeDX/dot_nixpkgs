@@ -56,6 +56,9 @@ in
   (buildDarwinApps "qq-beta" "8.4.10.118" "QQ"
     "${txBaseUrl}/qqfile/{2}forMac/{2}Catalyst/{2}_{1}.dmg"
     "sha256-3tdEZD241ZEsuW2JIyeGpV62wI1+AZjHSVxyeNKBfRY=")
+  (buildDarwinApps "zoom" "5.7.5.1123" "zoomus.pkg"
+    "https://cdn.{0}.us/prod/{1}/Zoom.pkg"
+    "sha256-W8YyFgxRAugcYUzG36gmQVJ6ZmUZRbIIOspGdrHxiBk=")
 ] ++ [
   # Folder: IDE
   (buildDarwinApps "appcode" "2021.1.3" "AppCode"
@@ -100,9 +103,17 @@ in
     "https://bitbucket.org/liule/{0}/downloads/{2}-{1}.dmg"
     "sha256-hYKwRbNAzDKNn6uao3aZ9rtzEqOMeyhHZoR4/G/q2RM=")
 ] ++ [
+  # Folder: Virtualization
+  (buildDarwinApps "docker" "67351" "Docker"
+    "https://desktop.{0}.com/mac/stable/amd64/{1}/{2}.dmg"
+    "sha256-CMkb6PeExBtneyj27qKn7AAeC4ErsO6XjRwLYOzqd7s=")
+] ++ [
   # Folder: None (Outside)
   (buildDarwinApps "neteasemusic" "2.3.5_856" "网易云音乐"
     "https://d1.music.126.net/dmusic/NeteaseMusic_{1}_web.dmg"
     "sha256-zkcGKvm5rL9AexzYuxo/eYsodys46yuR3dByYLvhNqw=")
+  (buildDarwinApps "baidunetdisk" "3.9.1" "百度网盘"
+    "https://wppkg.baidupcs.com/issue/netdisk/MACguanjia/BaiduNetdisk_mac_{1}.dmg"
+    "sha256-0tBxYTp/CWPwaqubZxkTagGzayxfgsV7uvL7QVbFlW4=")
 ]
 
