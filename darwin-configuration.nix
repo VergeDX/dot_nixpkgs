@@ -7,6 +7,7 @@ in
   environment.systemPackages = [
     (import ./packages/clashX.nix)
     (import ./packages/menubar_runcat.nix)
+    (import ./packages/MacOS-CapsLockIndicator.nix)
     pkgs.vscode # pkgs.vscodium
   ] ++ import ./fetched_apps.nix;
 
