@@ -5,7 +5,8 @@ in
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
-    (import ./clashX.nix)
+    (import ./packages/clashX.nix)
+    (import ./packages/menubar_runcat.nix)
     pkgs.vscode # pkgs.vscodium
   ] ++ import ./fetched_apps.nix;
 
