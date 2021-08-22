@@ -1,5 +1,14 @@
 { config, pkgs, ... }:
-let me = "vanilla";
+let
+  # https://github.com/VanCoding/nix-vscode-extension-manager#installation
+  vscode-with-extensions =
+    (pkgs.vscode-with-extensions.override {
+      vscodeExtensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace
+        (builtins.fromJSON (builtins.readFile ./vscode-extensions.json));
+    }).overrideAttrs (oldAttrs: rec {
+      # https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#L14
+      pname = pkgs.vscode.pname;
+    });
 in
 {
   # List packages installed in system profile. To search by name, run:
@@ -8,7 +17,9 @@ in
     (import ./packages/clashX.nix)
     (import ./packages/menubar_runcat.nix)
     (import ./packages/MacOS-CapsLockIndicator.nix)
-    pkgs.vscode # pkgs.vscodium
+
+    # vscode | vscode-insiders | vscodium
+    vscode-with-extensions
   ] ++ import ./fetched_apps.nix;
 
   # Use a custom configuration.nix location.
