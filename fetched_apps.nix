@@ -61,6 +61,10 @@ in
     "sha256-W8YyFgxRAugcYUzG36gmQVJ6ZmUZRbIIOspGdrHxiBk=")
 ] ++ [
   # Folder: IDE
+  (buildDarwinApps "android-studio" "2020.3.1.23" "Android Studio - Arctic Fox | 2020.3.1 Patch 1"
+    "https://redirector.gvt1.com/edgedl/android/studio/install/{1}/{0}-{1}-mac.dmg"
+    "sha256-Lo/XW2FMXEjLPfH72R0W5GwJqFvR2/RYF3u+6LgrLn4="
+  )
   (buildDarwinApps "appcode" "2021.1.3" "AppCode"
     "${jbBaseUrl}/objc/{2}-{1}.dmg"
     "sha256-t8LlJWEosUkRsEcvdNcnDZ4bx/9Wl9KM34Mz7Hx4ENY=")
@@ -92,9 +96,9 @@ in
   (buildDarwinApps "scroll-reverser" "1.8.1" "ScrollReverser"
     "https://pilotmoon.com/downloads/ScrollReverser-{1}.zip"
     "sha256-9lGjjW/lhTStfY3dWqqm4XecgY/zAILZv/7zef7mKis=")
-  (buildDarwinApps "one-switch" "317" "OneSwitch"
+  (buildDarwinApps "one-switch" "322" "OneSwitch"
     "https://fireball.studio/api/release_manager/downloads/studio.fireball.{2}/{1}.zip"
-    "sha256-9ubqannc8NpsBSoYr95J/Boh3qcGL+xIew9EHL5NgnE=")
+    "sha256-Zhjgy83E3W3DJwMwOhdqrJGfmzyECTjfmdHHJBkEzLk=")
   (buildDarwinApps "openinterminal" "2.3.3" "OpenInTerminal"
     "https://github.com/Ji4n1ng/{2}/releases/download/v{1}/{2}.app.zip"
     "sha256-VN++jSG0y0aIXtXrw0/t+Dgqz+tQBAgo1SsKC4p8iFs=")
