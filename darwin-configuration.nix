@@ -23,6 +23,10 @@ in
     pkgs.kitty # pkgs.alacritty
   ] ++ import ./fetched_apps.nix;
 
+  environment.systemPath = [
+    "/Users/vanilla/Android/sdk/platform-tools"
+  ];
+
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
