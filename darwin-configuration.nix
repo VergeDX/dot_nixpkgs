@@ -20,6 +20,7 @@ in
 
     # vscode | vscode-insiders | vscodium
     vscode-with-extensions
+    pkgs.kitty # pkgs.alacritty
   ] ++ import ./fetched_apps.nix;
 
   # Use a custom configuration.nix location.
